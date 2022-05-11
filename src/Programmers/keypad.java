@@ -3,6 +3,7 @@ package Programmers;
 //4 5 6 [1,0] [1,1] [1,2]
 //7 8 9 [2,0] [2,1] [2,2]
 //* 0 # [3,0] [3,1] [3,2]  *=10 0=11 #=12로 위치 표현
+
 public class keypad {
     public String solution(int[] numbers, String hand) {
         int left=10;
@@ -19,13 +20,26 @@ public class keypad {
                 right = numbers[i];//손 위치 변경
             }
             else{//가운데 패드일시..
-                // 1 4 7= 왼  3 6 9= 오  2 5 8= 경우에 따라..
-                // 음....규칙이 손꾸락 마다 3씩 추가된다..그럼 3으로 나눈 나머지를 하면
-                //왼손은 1 오른손은 0  경우에 따라는 2이렇게 구해 진다.. 근데 이걸 이용해서 거리를 구할수 있을까?...?????!!!!!!
-                //!!!!!!!!!!!!!난....천재....지니어스.....킴....
-                //2차원 배열로 봤을때 1은 원점이라고 하고 나머지 숫자들을 보면 3으로 나눈 몫이 가로가 되고 나머지는 세로가 된다.
-                //그럼 이걸 이용해서 7과 2의 사이를 구해보면 |(7/3)-(2/3)|=2 |(7%3)-(2%3)|=1 그리고 2+1를 하면 거리가 나온다!!
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                int left_hand=Math.abs((left/3)-(numbers[i]/3))+Math.abs((left%3)-(numbers[i]%3)); //왼손과 가운데 패드와의 거리
+                int right_hand=Math.abs((right/3)-(numbers[i]/3))+Math.abs((right%3)-(numbers[i]%3)); //오른손과 가운데 패드와의 거리
+                if(left_hand>right_hand){//왼손의 거리가 오른손보다 길때
+                    answer += "R";
+                    right = numbers[i];
+                }
+                else if(right_hand>left_hand){//오른손의 거리가 왼손보다 길때
+                    answer += "L";
+                    left = numbers[i];
+                }
+                else{
+                    if(hand=="left"){//왼손과 오른손의 거리가 같고 왼손 잡이일때
+                        answer += "L";
+                        left = numbers[i];
+                    }
+                    else{//왼손과 오른손의 거리가 같고 오른손 잡이 일떋
+                        answer += "R";
+                        right = numbers[i];
+                    }
+                }
             }
         }
         return answer;
