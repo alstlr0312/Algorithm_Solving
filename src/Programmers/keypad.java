@@ -20,6 +20,7 @@ public class keypad {
                 right = numbers[i];//손 위치 변경
             }
             else{//가운데 패드일시..
+
                 int left_hand=Math.abs((left/3)-(numbers[i]/3))+Math.abs((left%3)-(numbers[i]%3)); //왼손과 가운데 패드와의 거리
                 int right_hand=Math.abs((right/3)-(numbers[i]/3))+Math.abs((right%3)-(numbers[i]%3)); //오른손과 가운데 패드와의 거리
                 if(left_hand>right_hand){//왼손의 거리가 오른손보다 길때
