@@ -20,9 +20,10 @@ public class keypad {
                 right = numbers[i];//손 위치 변경
             }
             else{//가운데 패드일시..
+                if(numbers[i]==0) numbers[i]=11;
 
-                int left_hand=Math.abs((left/3)-(numbers[i]/3))+Math.abs((left%3)-(numbers[i]%3)); //왼손과 가운데 패드와의 거리
-                int right_hand=Math.abs((right/3)-(numbers[i]/3))+Math.abs((right%3)-(numbers[i]%3)); //오른손과 가운데 패드와의 거리
+                int left_hand=Math.abs(left-numbers[i])/3+Math.abs(left-numbers[i])%3; //왼손과 가운데 패드와의 거리
+                int right_hand=Math.abs(right-numbers[i])/3+Math.abs(right-numbers[i])%3; //오른손과 가운데 패드와의 거리
                 if(left_hand>right_hand){//왼손의 거리가 오른손보다 길때
                     answer += "R";
                     right = numbers[i];
@@ -32,7 +33,7 @@ public class keypad {
                     left = numbers[i];
                 }
                 else{
-                    if(hand=="left"){//왼손과 오른손의 거리가 같고 왼손 잡이일때
+                    if(hand.equals("left")){//왼손과 오른손의 거리가 같고 왼손 잡이일때
                         answer += "L";
                         left = numbers[i];
                     }
