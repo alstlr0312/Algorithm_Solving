@@ -12,7 +12,10 @@ public class More_spicy {
 
         while(heap.peek() < K) {  //모든 음식이 K이상이 될 때 까지 반복한다. peek()=heap의 첫번 째 값
             int a = heap.poll();  //a=스코빌지수가 가장 낮은거  poll()=heap에 첫번째 값을 반환하고 제거 비어 있으면 null
-
+            if(heap.isEmpty()){   //heap이 비어 있을떄
+                answer = -1;
+                break;
+            }
             int b = heap.poll();  //b=스코빌지수가 두번쨰로 낮은거
             int c = a + b * 2;    //c=a,b 합친 음식의 스코빌 지수
 
