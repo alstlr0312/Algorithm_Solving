@@ -26,7 +26,7 @@ public class Printer {
                 queue.add(Big);                     //맨뒤에 다시 삽입
                 if(location==-1){                   //location이 -1 이 되면서 프로그램이 출력 하므로 이경우 구할려는 프린터가
                                                     //맨뒤로 이동했으므로 location도 배열의 길이만큼 더해줌
-                    location+= priorities.length;
+                    location += queue.size();
                 }
             }
             if(location==-1){                      //구할려는 프린터가 출력됬을때 반복문 정지
