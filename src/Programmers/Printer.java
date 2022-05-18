@@ -19,13 +19,13 @@ public class Printer {
                     break;
                 }
             }
-            if(biggest = true){                     //프린터를 하나 출력했을 경우
+            if(biggest == true){                     //프린터를 하나 출력했을 경우
                 answer++;                           //횟수 추가
             }
             else{                                   //만일 Big이 우선순위가 가장 높지 않았을 때
                 queue.add(Big);                     //맨뒤에 다시 삽입
             }
-            if(location==-1){                      //구 할려는 프린터가 출력됬을때 반복문 정지
+            if(location==-1){                      //구할려는 프린터가 출력됬을때 반복문 정지
                 break;
             }
 
