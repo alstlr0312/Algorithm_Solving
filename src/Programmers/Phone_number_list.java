@@ -18,7 +18,9 @@ public class Phone_number_list {
                 //endindex=문자열의 끝 부분을 지정
                 if(hash.containsKey(phone_book[i].substring(0,j)))
                     //해쉬맵 안에 phone_book[i]의 substring(0,j)가 존재하는지 확인
-                    return answer = false;
+                    answer = false;
+                    return answer;
+
             }
         }
         return answer;
