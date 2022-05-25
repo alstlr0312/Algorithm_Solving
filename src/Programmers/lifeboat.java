@@ -6,9 +6,10 @@ public class lifeboat {
         int big=people.length-1;
         int small=0;
         Arrays.sort(people);
-        for(int i=0; i<people.length; i++){
+        while(big>small){
             if(people[big]+people[small]>limit){
                 big--;
+                answer++;
             }
             else{
                 answer++;
