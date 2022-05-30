@@ -17,6 +17,6 @@ public class lifeboat {
                 small++;
             }
         }
-        return answer; //해피
+        return answer;
     }
 }
