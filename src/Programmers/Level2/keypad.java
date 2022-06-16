@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.Level2;
 //1 2 3 [0,0] [0,1] [0,2]
 //4 5 6 [1,0] [1,1] [1,2]
 //7 8 9 [2,0] [2,1] [2,2]

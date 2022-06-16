@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.Level2;
 import java.util.*;
 public class Printer {
     public int solution(int[] priorities, int location) {
