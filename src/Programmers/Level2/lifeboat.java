@@ -1,4 +1,4 @@
-package Programmers.Level2;
+package Programmers;
 import java.util.Arrays;
 public class lifeboat {
     public int solution(int[] people, int limit) {
@@ -17,6 +17,6 @@ public class lifeboat {
                 small++;
             }
         }
-        return answer; //해피해피
+        return answer;
     }
 }
