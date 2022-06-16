@@ -1,21 +1,19 @@
 package Programmers.Level1;
-
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class Report_result {
     public int[] Report_result(String[] id_list, String[] report, int k) {
         int a= id_list.length;
         int[] answer = new int[a];
-        HashMap<String,Integer> Map = new HashMap<String,Integer>();//배열을 key와 value로 저장
         HashSet<String> Set = new HashSet<String>();//중복 제거
+        HashMap<String,Integer> Map = new HashMap<String,Integer>();//배열을 key와 value로 저장
         int i=0;
-        for(String id:id_list){
+        for(String id : id_list){
             Map.put(id,i++); //해시맵에 id_list를 key와 value로 나눠서 저장
         }
         int[] b=new int[a];
         for(String re : report){
-            if(re.contains(re)) //re의 값이 있는지 검색 있으면 계속
+            if(Set.contains(re)) //re의 값이 있는지 검색 있으면 계속
                 continue;
             String[] space = re.split(" "); //report의 공백으로 문자열을 나눔
             b[Map.get(space[1])]++; // 신고 당한 사람들을 b에 저장
